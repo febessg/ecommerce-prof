@@ -15,7 +15,6 @@ function App() {
   }
 
   return (
-      <BrowserRouter>
         <Routes>
           <Route exact path="/produtos" 
             element={
@@ -34,7 +33,6 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
-      </BrowserRouter>
   );
 }
 

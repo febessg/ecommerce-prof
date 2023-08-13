@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import '../Styles/Home.css'
+import React from "react";
 
 function Home() {
   return (
-    <div className="home"> 
+    <div data-testid="home" className="home"> 
       <Header></Header>
       <div className="home-content">
         <div className="home-divider">

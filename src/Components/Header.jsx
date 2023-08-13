@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import '../Styles/App.css'
+import React from "react"
 const Header = ({carrinholength, filter, title}) => {
   return (
     <div className='header'>
@@ -12,9 +13,9 @@ const Header = ({carrinholength, filter, title}) => {
         <div>{title}</div>
         { filter }
         { carrinholength >= 0 && 
-          <Link to="/carrinho">
-          <div>
-            Carrinho: {carrinholength}
+          <Link data-testid="to-cart" to="/carrinho">
+          <div >
+            Carrinho: <strong data-testid="cart-amount">{carrinholength}</strong>
           </div>
         </Link>
         }
