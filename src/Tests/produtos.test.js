@@ -13,7 +13,7 @@ test('When filtering using the input the page should render less elements', () =
   const productsAppearing = screen.getAllByTestId("cardProduto")
   expect(productsAppearing).toHaveLength(2)
 })
-
+expect(result)
 test('The page should render all products', () => {
   render(<BrowserRouter><Produtos /></BrowserRouter>)
   const productsAppearing = screen.getAllByTestId("product-name")
@@ -25,3 +25,4 @@ test('When passing cart items it should appear the right amount', () => {
   const productsAppearing = screen.getByTestId("cart-amount")
   expect(productsAppearing.innerHTML).toBe("2")
 })
+
