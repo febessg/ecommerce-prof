@@ -1,37 +1,43 @@
-import { useEffect, useState } from 'react';
-import mock from '../Mock/mock_produtos.json'
-import { Link } from 'react-router-dom';
-import '../Styles/Produtos.css'
+/* eslint-disable react/prop-types */
+import React, { useEffect, useState } from 'react';
+import mock from '../Mock/mock_produtos.json';
+import '../Styles/Produtos.css';
 import Header from '../Components/Header';
 
-function Produtos({handleCarrinho, carrinho}) {
-  const [produtos, setProdutos] = useState(mock)
-  const [carrinholength, setCarrinhoLength] = useState(0)
-  useEffect(() => { 
-    setCarrinhoLength(carrinho.length) 
-  }, [carrinho.length])
-  let filter = <input
-    className='page-filter'
-    placeholder='Pesquise os melhores produtos' 
-    onChange={(e) => setProdutos([...mock.filter((produto) => new RegExp(e.target.value, 'i').test(produto.name))])} >
-  </input>
+function Produtos({ handleCarrinho, carrinho }) {
+  const [produtos, setProdutos] = useState(mock);
+  const [carrinholength, setCarrinhoLength] = useState(0);
+  useEffect(() => {
+    setCarrinhoLength(carrinho.length);
+  }, [carrinho.length]);
+  const filter = (
+    <label htmlFor="page-filter">
+      <input
+        className="page-filter"
+        placeholder="Pesquise os melhores produtos"
+        id="page-filter"
+        onChange={(e) => setProdutos([...mock.filter((produto) => new RegExp(e.target.value, 'i').test(produto.name))])}
+      />
+    </label>
+  );
   return (
-      <> 
-        <Header filter={filter} carrinholength={carrinholength}/>
-        <div className='listaProdutos'>
-          {
-            produtos.map((e) => 
-              <>
-                <div className='cardProduto' onClick={() => handleCarrinho(e)}>
-                  <img alt={e.name} src={e.images}></img>
+    <div>
+      <Header filter={filter} carrinholength={carrinholength} />
+      <div className="listaProdutos">
+        <h1>Nossos Produtos</h1>
+        {
+            produtos.map((e) => (
+              <div>
+                <div tabIndex="0" role="button" onKeyDown={() => handleCarrinho(e)} className="cardProduto" onClick={() => handleCarrinho(e)}>
+                  <img alt={e.description} src={e.images} />
                   <p>{e.name}</p>
                   <p>{e.price}</p>
                 </div>
-              </>
-            )
+              </div>
+            ))
           }
-        </div>
-      </>
+      </div>
+    </div>
   );
 }
-export default Produtos
+export default Produtos;

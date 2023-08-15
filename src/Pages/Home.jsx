@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
-import Header from "../Components/Header";
-import '../Styles/Home.css'
+import React, { Link } from 'react-router-dom';
+import Header from '../Components/Header';
+import '../Styles/Home.css';
 
 function Home() {
   return (
-    <div className="home"> 
-      <Header></Header>
+    <div className="home">
+      <Header />
       <div className="home-content">
         <div className="home-divider">
           <Link to="/produtos">
-            <button className="home-button">
+            <button type="button" className="home-button">
               Nossos Produtos
             </button>
           </Link>
@@ -24,4 +24,4 @@ function Home() {
     </div>
   );
 }
-export default Home
+export default Home;
