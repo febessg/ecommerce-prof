@@ -18,8 +18,7 @@ function Header({ carrinholength, filter, title }) {
           && (
           <Link className="carrinho-link" to="/carrinho">
             <div>
-              Carrinho:
-              {' '}
+              {'Carrinho: '}
               {carrinholength}
             </div>
           </Link>

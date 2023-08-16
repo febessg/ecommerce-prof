@@ -52,7 +52,7 @@ function Checkout({ carrinho }) {
             {' '}
             {valorTotal}
           </p>
-          <Button onclick={() => alert('Compra bem-sucedida')} text="Finalizar Compra" />
+          <Button to="/sucesso" text="Finalizar Compra" />
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import Page404 from './Pages/404';
 import Carrinho from './Pages/Carrinho';
 import Checkout from './Pages/Checkout';
 import Produtos from './Pages/Produtos';
+import SuccessPage from './Pages/Success';
 
 function App() {
   const [carrinho, setCarrinho] = useState([]);
@@ -45,6 +46,7 @@ function App() {
             />
           )}
         />
+        <Route exact path="/sucesso" element={<SuccessPage />} />
         <Route exact path="/" element={<Home />} />
         <Route path="*" element={<Page404 />} />
       </Routes>

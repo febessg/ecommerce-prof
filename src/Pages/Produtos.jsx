@@ -13,6 +13,7 @@ function Produtos({ handleCarrinho, carrinho }) {
   const filter = (
     <label htmlFor="page-filter">
       <input
+        aria-label="barra de pesquisa"
         className="page-filter"
         placeholder="Pesquise os melhores produtos"
         id="page-filter"
@@ -23,12 +24,20 @@ function Produtos({ handleCarrinho, carrinho }) {
   return (
     <div>
       <Header filter={filter} carrinholength={carrinholength} />
+      <h1>Nossos Produtos</h1>
       <div className="listaProdutos">
-        <h1>Nossos Produtos</h1>
         {
             produtos.map((e) => (
               <div>
-                <div tabIndex="0" role="button" onKeyDown={() => handleCarrinho(e)} className="cardProduto" onClick={() => handleCarrinho(e)}>
+                <div
+                  tabIndex="0"
+                  role="button"
+                  onKeyDown={({ key }) => {
+                    if (key === 'Enter') handleCarrinho(e);
+                  }}
+                  className="cardProduto"
+                  onClick={() => handleCarrinho(e)}
+                >
                   <img alt={e.description} src={e.images} />
                   <p>{e.name}</p>
                   <p>{e.price}</p>
