@@ -34,7 +34,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #b7afb5;
+  background-color: #ff00bf;
 }
 .header-items {
   display: flex;
@@ -48,4 +48,10 @@ body {
 .header input {
   height: 30px;
   width: 400px;
+}
+
+.carrinho-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
 }

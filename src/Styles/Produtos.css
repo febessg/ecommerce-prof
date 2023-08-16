@@ -6,6 +6,10 @@
   justify-content: center;
 }
 
+h1 {
+  text-align: center;
+}
+
 .cardProduto {
   margin: 10px;
   background-color: white;
