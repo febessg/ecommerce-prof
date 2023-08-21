@@ -1,10 +1,9 @@
 import React from 'react';
 
 function SuccessPage() {
+
   return (
-    <div>
-      Compra finalizada com sucesso
-    </div>
+    <div>Compra finalizada com sucesso</div>
   );
 }
 

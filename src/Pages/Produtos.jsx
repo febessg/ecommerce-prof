@@ -25,7 +25,7 @@ function Produtos({ handleCarrinho, carrinho }) {
     <div>
       <Header filter={filter} carrinholength={carrinholength} />
       <h1>Nossos Produtos</h1>
-      <div className="listaProdutos">
+      <div className="listaProdutos" data-testid='products-list'>
         {
             produtos.map((e) => (
               <div>
@@ -37,6 +37,7 @@ function Produtos({ handleCarrinho, carrinho }) {
                   }}
                   className="cardProduto"
                   onClick={() => handleCarrinho(e)}
+                  data-testid='products'
                 >
                   <img alt={e.description} src={e.images} />
                   <p>{e.name}</p>

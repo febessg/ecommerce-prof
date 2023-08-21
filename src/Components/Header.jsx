@@ -5,7 +5,7 @@ import React from 'react';
 
 function Header({ carrinholength, filter, title }) {
   return (
-    <header className="header">
+    <header className="header" data-testid='header'>
       <div className="logo-placeholder">
         <div className="logo">
           shoop

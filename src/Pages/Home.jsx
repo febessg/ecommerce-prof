@@ -4,7 +4,7 @@ import '../Styles/Home.css';
 
 function Home() {
   return (
-    <div className="home">
+    <div className="home" data-testid="home">
       <Header />
       <div className="home-content">
         <div className="home-divider">
